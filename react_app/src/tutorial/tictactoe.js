@@ -5,7 +5,7 @@ import './tictactoe.css';
 class Square extends React.Component {
     render() {
         return (
-            <button className="square" onClick={() => this.props.rerender()}>
+            <button className="square" onClick={() => this.props.onClick()}>
                 {this.props.player}
             </button>
         );
@@ -20,11 +20,17 @@ class Board extends React.Component {
         };
     }
 
+    handleClick(i) {
+        const newSquares = this.state.squares.slice();
+        newSquares[i] = 'X';
+        this.setState({squares: newSquares});
+    }
+
     renderSquare(i) {
         return (
             <Square
                 player={this.state.squares[i]}
-                rerender={() => this.modifySquare(i)}
+                onClick={() => this.handleClick(i)}
             />
         );
     }
