@@ -4,7 +4,7 @@ import './tictactoe.css';
 
 function Square(props) {
     return (
-        <button className="square" onClick={props.onClick()}>
+        <button className="square" onClick={props.onClick}>
             {props.player}
         </button>
     );
@@ -15,13 +15,17 @@ class Board extends React.Component {
         super(props);
         this.state = {
             squares: Array(9).fill(null),
+            XIsNext: true,
         };
     }
 
     handleClick(i) {
         const newSquares = this.state.squares.slice();
-        newSquares[i] = 'X';
-        this.setState({squares: newSquares});
+        newSquares[i] = this.state.XIsNext ? 'X' : 'O';
+        this.setState({
+            squares: newSquares,
+            XIsNext: !this.state.XIsNext,
+        });
     }
 
     renderSquare(i) {
@@ -34,7 +38,7 @@ class Board extends React.Component {
     }
 
     render() {
-        const status = 'Next player: X';
+        const status = 'Next player: ' + (this.state.XIsNext ? 'X' : 'O');
 
         return (
             <div>
