@@ -5,12 +5,15 @@ import './tictactoe.css';
 class Square extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            used: false,
+        }
     }
 
     render() {
         return (
-            <button className="square" onClick={() => {alert('You clicked a square! omo!');}}>
-                {this.props.index}
+            <button className="square" onClick={() => {this.setState({used: true})}}>
+                {this.state.used ? 'X' : this.props.index}
             </button>
         );
     }
