@@ -3,17 +3,10 @@ import ReactDOM from 'react-dom';
 import './tictactoe.css';
 
 class Square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            used: false,
-        };
-    }
-
     render() {
         return (
-            <button className="square" onClick={() => {this.setState({used: true})}}>
-                {this.state.used ? 'X' : this.props.index}
+            <button className="square" onClick={() => this.props.rerender()}>
+                {this.props.player}
             </button>
         );
     }
@@ -28,7 +21,12 @@ class Board extends React.Component {
     }
 
     renderSquare(i) {
-        return <Square player={this.state.squares[i]}/>;
+        return (
+            <Square
+                player={this.state.squares[i]}
+                rerender={() => this.modifySquare(i)}
+            />
+        );
     }
 
     render() {
