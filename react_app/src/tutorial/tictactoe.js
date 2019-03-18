@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './tictactoe.css';
 
-class Square extends React.Component {
-    render() {
-        return (
-            <button className="square" onClick={() => this.props.onClick()}>
-                {this.props.player}
-            </button>
-        );
-    }
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick()}>
+            {props.player}
+        </button>
+    );
 }
 
 class Board extends React.Component {
