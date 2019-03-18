@@ -28,7 +28,7 @@ class Board extends React.Component {
     }
 
     renderSquare(i) {
-        return <Square index={i}/>;
+        return <Square player={this.state.squares[i]}/>;
     }
 
     render() {
