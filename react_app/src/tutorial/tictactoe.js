@@ -5,8 +5,8 @@ import './tictactoe.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
-        {this.props.nonexistent}
+      <button className="square" onClick={() => {alert('You clicked a square! omo!')}}>
+        {this.props.index}
       </button>
     );
   }
