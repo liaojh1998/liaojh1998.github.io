@@ -69,38 +69,44 @@ class Game extends React.Component {
         this.state = {
             history:[{
                 squares: Array(9).fill(null),
-                moved: 0,
             }],
+            stepNumber: 0,
             XIsNext: true,
         }
     }
 
     handleClick(i) {
-        const history = this.state.history;
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
-        const moved = current.moved;
         const squares = current.squares.slice();
         if (!(squares[i] || calculateWinner(squares))) {
             squares[i] = this.state.XIsNext ? 'X' : 'O';
             this.setState({
                 history: history.concat([{
                     squares: squares,
-                    moved: moved + 1,
                 }]),
+                stepNumber: history.length,
                 XIsNext: !this.state.XIsNext,
             });
         }
     }
 
+    jumpTo(step) {
+        this.setState({
+            stepNumber: step,
+            XIsNext: (step % 2) === 0,
+        });
+    }
+
     render() {
         const history = this.state.history;
-        const current = history[history.length - 1];
-        const moved = current.moved;
+        const step = this.state.stepNumber;
+        const current = history[step];
         const winner = calculateWinner(current.squares);
         var status;
         if (winner) {
             status = 'Winner: ' + winner;
-        } else if (moved == 9) {
+        } else if (step === 9) {
             status = "It's a tie!";
         } else {
             status = 'Next player: ' + (this.state.XIsNext ? 'X' : 'O');
