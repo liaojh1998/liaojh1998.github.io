@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.cs.utexas.edu/~liaojh/</loc>
+    <lastmod>2020-09-02T21:34:31+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.cs.utexas.edu/~liaojh/static/media/profile.d41721cd.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.cs.utexas.edu/~liaojh/cs394n</loc>
+    <lastmod>2020-09-02T21:34:31+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <image:image>
+      <image:loc>https://www.cs.utexas.edu/~liaojh/static/media/cs394nbg.19df1d57.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cs.utexas.edu/~liaojh/static/media/toxicitybad.97d021e1.png</image:loc>
+    </image:image>
+  </url>
+</urlset>

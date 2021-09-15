@@ -1,3 +1,48 @@
-# https://www.robotstxt.org/robotstxt.html
+#
+# robots.txt
+#
+# This file is to prevent the crawling and indexing of certain parts
+# of your site by web crawlers and spiders run by sites like Yahoo!
+# and Google. By telling these "robots" where not to go on your site,
+# you save bandwidth and server resources.
+#
+# This file will be ignored unless it is at the root of your host:
+# Used:    http://example.com/robots.txt
+# Ignored: http://example.com/site/robots.txt
+#
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+# CSS, JS, Images
+Allow: /modules/*.css$
+Allow: /modules/*.css?
+Allow: /modules/*.js$
+Allow: /modules/*.js?
+Allow: /modules/*.gif
+Allow: /modules/*.jpg
+Allow: /modules/*.jpeg
+Allow: /modules/*.png
+Allow: /static/css/*.css$
+Allow: /static/css/*.css?
+Allow: /static/css/*.scss$
+Allow: /static/css/*.scss?
+Allow: /static/media/*.png
+Allow: /static/media/*.jpg
+Allow: /static/media/*.jpeg
+Allow: /static/media/*.gif
+Allow: /static/js/*.js$
+Allow: /static/js/*.js?
+Allow: /static/node_modules/*.js$
+Allow: /static/node_modules/*.js?
+Allow: /scss/*.scss$
+Allow: /scss/*.scss?
+Allow: /node_modules/bootstrap/scss/*.scss$
+Allow: /node_modules/bootstrap/scss/*.scss?
+# Directories
+Disallow: /static/
+Disallow: /modules/
+Disallow: /node_modules/
+Disallow: /scss/
+# Files
+Disallow: /LICENSE.txt
