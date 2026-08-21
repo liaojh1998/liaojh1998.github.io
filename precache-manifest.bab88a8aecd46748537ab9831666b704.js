@@ -28,10 +28,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/runtime-main.23041e79.js"
   },
   {
-    "revision": "19df1d57dbd7f8087c6cccae1dc54313",
-    "url": "/static/media/cs394nbg.19df1d57.jpg"
-  },
-  {
     "revision": "73fd730fc8519c1b44dd0b6d6c1bfad6",
     "url": "/static/media/cv.73fd730f.pdf"
   },
@@ -41,10 +37,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "93e02cea659fd191e765d8d3c3d360fa",
-    "url": "/static/media/resume_2021.93e02cea.pdf"
-  },
-  {
-    "revision": "97d021e1af7fb797bf41b7228573dfc4",
-    "url": "/static/media/toxicitybad.97d021e1.png"
+    "url": "/static/media/resume.93e02cea.pdf"
   }
 ]);
